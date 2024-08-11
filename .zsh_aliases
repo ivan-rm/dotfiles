@@ -1,0 +1,32 @@
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias la='ls -A'
+alias rm='rm -i' #-i prompts user before deletion
+alias cp='cp -i' #-i prompts user before overwriting
+alias ls='ls -F'
+alias ll='ls -alF'
+alias l='ls -CF'
+alias vim='nvim'
+alias python='python3'
+alias pip='pip3'
+alias dotfiles='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias myip='curl ifconfig.me'
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Git
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gcad='git commit -a --amend'
+
+# Compression
+compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
+alias decompress="tar -xzf"
