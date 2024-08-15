@@ -1,5 +1,5 @@
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -30,3 +30,5 @@ alias gcad='git commit -a --amend'
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
+
+alias docker=podman
