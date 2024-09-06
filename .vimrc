@@ -11,6 +11,41 @@
 " `vim -u foo`).
 set nocompatible
 
+" Always show the status bar
+set laststatus=2
+" Set the status line
+function! GitBranch()
+
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+
+endfunction
+
+
+
+function! StatuslineGit()
+
+  let l:branchname = GitBranch()
+
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
+
+
 " Turn on syntax highlighting.
 syntax on
 
@@ -78,4 +113,3 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
-
