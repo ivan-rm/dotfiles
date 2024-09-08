@@ -14,7 +14,7 @@ alias l='ls -CF'
 alias vim='nvim'
 alias python='python3'
 alias pip='pip3'
-alias dotfiles='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+# alias dotfiles='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias myip='curl ifconfig.me'
 
 # Directories
