@@ -42,22 +42,26 @@ setopt correctall
 autoload -U promptinit
 promptinit
 
-# Load the VCS into the prompt
+# Load the VCS info into the prompt
+## Start git prompt
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-
-# Ensure git info is up to date
 precmd() { vcs_info }
-setopt PROMPT_SUBST
 
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats "%F{green}(%b)%f"
+zstyle ':vcs_info:git:*' formats "%F{green}(%b%u)%f"
 zstyle ':vcs_info:git:*' actionformats "%F{yellow}(%b|%a)%f"
-zstyle ':vcs_info:git:*' stagedstr "%F{green}●%f"
-zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}●%f"
-zstyle ':vcs_info:git:*' deletedstr "%F{red}●%f"
+zstyle ':vcs_info:git:*' stagedstr "%F{green}⏺%f"
+zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}!%f"
+zstyle ':vcs_info:git:*' deletedstr "%F{red}✗%f"
 
-PROMPT='%(?.%F{green}⏺.%F{red}⏺ [%?]) %F{blue}%~%f $ '
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd vcs_info
+
+setopt PROMPT_SUBST
+## end git prompt
+
+PROMPT='%(?.%F{green}⏺.%F{red}⏺ [%?]) :%F{blue}%~%f $ '
 RPROMPT='${vcs_info_msg_0_}${vcs_info_msg_1_}${vcs_info_msg_2_}${vcs_info_msg_3_} '
 RPROMPT+='%F{magenta}%*%f'
 
