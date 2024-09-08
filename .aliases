@@ -32,3 +32,6 @@ compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
 
 alias docker=podman
+
+# Start idle in a virtual enviroment
+alias idle='python -m idlelib.idle'
