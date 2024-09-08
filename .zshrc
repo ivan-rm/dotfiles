@@ -72,3 +72,10 @@ export TERM="xterm-256color" CLICOLOR=1
 
 # Custom aliases
 source ~/.aliases
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='zed'
+fi
