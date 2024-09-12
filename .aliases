@@ -6,7 +6,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias la='ls -A'
-alias rm='rm -i' #-i prompts user before deletion
+alias rm='rm -I' #-i prompts user before deletion
 alias cp='cp -i' #-i prompts user before overwriting
 alias ls='ls -F'
 alias ll='ls -alF'
