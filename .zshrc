@@ -83,3 +83,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
     export EDITOR='zed'
 fi
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Config file for ripgrep 
+export RIPGREP_CONFIG_PATH=~/.config/ripgreprc
