@@ -89,3 +89,7 @@ source <(fzf --zsh)
 
 # Config file for ripgrep 
 export RIPGREP_CONFIG_PATH=~/.config/ripgreprc
+
+# Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
