@@ -84,8 +84,15 @@ else
     export EDITOR='zed'
 fi
 
+# Zoxide
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init bash)"
+fi
+
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+if command -v fzf &>/dev/null; then
+  source <(fzf --zsh)
+fi
 
 # Config file for ripgrep 
 export RIPGREP_CONFIG_PATH=~/.config/ripgreprc
