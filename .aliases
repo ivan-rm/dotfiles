@@ -1,9 +1,9 @@
 # File system
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='command ls -alF'
+alias la='command ls -A'
+alias l='command ls -CF'
 alias ls='eza -lh --group-directories-first --icons'
-alias lsa='ls -a'
+alias lsa='command ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
