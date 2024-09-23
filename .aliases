@@ -23,7 +23,6 @@ alias n='nvim'
 alias vim='nvim'
 alias g='git'
 alias d='docker'
-alias zellij ='zellij options --theme catppuccin-latte'
 #alias r='rails'
 #alias bat='batcat'   # Necesary in Ubuntu
 alias vim='nvim'
