@@ -95,7 +95,7 @@ if command -v fzf &>/dev/null; then
 fi
 
 # Autostart zellij on shell creation
-eval "$(zellij setup --generate-auto-start zsh)"
+#eval "$(zellij setup --generate-auto-start zsh)"
 
 # Config file for ripgrep 
 export RIPGREP_CONFIG_PATH=~/.config/ripgreprc
