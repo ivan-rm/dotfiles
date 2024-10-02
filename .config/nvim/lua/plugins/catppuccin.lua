@@ -5,7 +5,7 @@ return {
     priority = 1000,
     ---@class CatppuccinOptions
     opts = {
-        flavour = "latte",
+        flavour = "macchiato",
         background = "light",
         transparent_background = false,
         integrations = {
