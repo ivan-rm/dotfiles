@@ -7,7 +7,7 @@ return {
     opts = {
         flavour = "macchiato",
         background = "light",
-        transparent_background = false,
+        transparent_background = true,
         integrations = {
             aerial = true,
             alpha = true,
