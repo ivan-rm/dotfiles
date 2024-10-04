@@ -93,12 +93,33 @@ fi
 if command -v fzf &>/dev/null; then
   source <(fzf --zsh)
 fi
+# Set catppuccin macchiato theme for FZF
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--color=selected-bg:#494d64 \
+--multi"
+
+# Integrate fd and fzf
+export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_DEFAULT_OPTS="--ansi"
+# Follow symbolic links and include hidden files
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 
 # Autostart zellij on shell creation
 #eval "$(zellij setup --generate-auto-start zsh)"
 
 # Config file for ripgrep 
 export RIPGREP_CONFIG_PATH=~/.config/ripgreprc
+
+# Define theme path for eza
+export EZA_CONFIG_DIR=~/.config/eza/
+
+# Set theme for bat
+export BAT_THEME="Catppuccin Macchiato"
+# Use bat as a colorizing pager for man
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Java
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

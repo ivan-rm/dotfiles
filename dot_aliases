@@ -1,14 +1,12 @@
 # File system
-alias ll='command ls -alF'
-alias la='command ls -A'
-alias l='command ls -CF'
 alias ls='eza -lh --group-directories-first --icons'
-alias ll='command ls -alF'
-alias la='command ls -A'
-alias l='command ls -CF'
-alias lsa='command ls -a'
+alias ll='eza --long -a'
+alias l='eza --long -bF'
+alias la='eza -a --group-directories-first'
+alias lsa='ls -a'
 alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
+
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 #alias fd='fdfind'
 alias cd='z'
@@ -28,6 +26,7 @@ alias g='git'
 alias d='docker'
 #alias r='rails'
 #alias bat='batcat'   # Necesary in Ubuntu
+alias cat='bat'
 alias vim='nvim'
 alias python='python3'
 alias pip='pip3'
