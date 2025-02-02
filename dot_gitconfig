@@ -1,0 +1,39 @@
+[user]
+	name = Iván Ruiz Marcos
+	email = ivanrm@norabide.com
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[core]
+	editor = zed
+	excludesfile = /Users/ivan/.gitignore_global
+  autocrlf = input
+  pager = delta
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[alias]
+	st = status -sb
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -m
+	rv = remote -v
+	d = diff
+	dv = difftool -t vimdiff -y
+	se = !git rev-list --all | xargs git grep -F
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[help]
+	autocorrect = 1
+[push]
+  autoSetupRemote = true
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictstyle = zdiff3
